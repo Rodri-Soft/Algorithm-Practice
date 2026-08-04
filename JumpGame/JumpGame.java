@@ -28,9 +28,15 @@ public class JumpGame {
     int maxReachable = 0;
 
     for (int i = 0; i < nums.length; i++) {
+
+      if (maxReachable == nums.length - 1) {
+        return true;
+      }
+
       // Si el índice actual ya no es alcanzable, atascado
-      if (i > maxReachable)
+      if (maxReachable < i) {
         return false;
+      }        
 
       // Actualiza el máximo índice al que puedes llegar
       maxReachable = Math.max(maxReachable, i + nums[i]);

@@ -20,17 +20,20 @@
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class FizzBuzz {
   public static void main(String[] args) {
 
     FizzBuzz fb = new FizzBuzz();
 
-    List<String> result = fb.fizzBuzz(15);
+    String result = fb.chicharra();
 
-    for (String r : result) {
-      System.out.println(r);
-    }
+    // for (String r : result) {
+    //   System.out.println(r);
+    // }
+
+    System.out.println(result);
 
   }
 
@@ -68,6 +71,25 @@ public class FizzBuzz {
     }
 
     return listResult;
+  }
+
+  public String chicharra() {
+
+   Scanner sc = new Scanner(System.in);
+
+    double a = sc.nextDouble();
+    double b = sc.nextDouble();
+    double c = sc.nextDouble();
+
+    double discriminante = b * b - 4 * a * c;
+
+    double primeraSolucion = (-b + Math.sqrt(discriminante)) / (2 * a);
+    double segundaSolucion = (-b - Math.sqrt(discriminante)) / (2 * a);
+
+    String r1 = (primeraSolucion == (long)primeraSolucion ? String.valueOf((long)primeraSolucion) : String.valueOf(primeraSolucion));
+    String r2 = (segundaSolucion == (long)segundaSolucion ? String.valueOf((long)segundaSolucion) : String.valueOf(segundaSolucion));
+
+    return r1 + " " + r2;
   }
 
 }
